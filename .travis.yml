@@ -27,7 +27,7 @@ script:
 
   # Build and tag frontend
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend noranzaki/udagram-frontend:v1
+  - docker tag udagram-frontend noranzaki/udagram-frontend:v6
 
   # Build and tag reverseproxy
   # - docker build -t udagram-reverseproxy ./udagram-reverseproxy
@@ -37,5 +37,5 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   # - docker push noranzaki/udagram-api-feed:v1
   # - docker push noranzaki/udagram-api-user:v1
-  - docker push noranzaki/udagram-frontend:v1
+  - docker push noranzaki/udagram-frontend:v6
   # - docker push noranzaki/udagram-reverseproxy:v1

@@ -2,29 +2,28 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: udagram-api-feed
-  name: udagram-api-feed
-  namespace: udagram
+    app: backend-feed
+  name: backend-feed
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: udagram-api-feed
+      app: backend-feed
   template:
     metadata:
       labels:
-        app: udagram-api-feed
+        app: backend-feed
     spec:
       containers:
       - image: noranzaki/udagram-api-feed:v2
-        name: udagram-api-feed
+        name: backend-feed
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "250m"
+            memory: 64Mi
+            cpu: 250m
           limits:
-            memory: "1024Mi"
-            cpu: "500m"
+            memory: 1024Mi
+            cpu: 500m
         envFrom:
         - configMapRef:
             name: env-config

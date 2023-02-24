@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: reverseproxy
-  namespace: udagram
   labels:
     app: reverseproxy
 spec:
@@ -16,9 +15,9 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: noranzaki/reverseproxy:v2
-        name: reverseproxy
-        imagePullPolicy: Always              
+      - image: noranzaki/udagram-reverseproxy:v2
+        name: reverseproxy 
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8080           
       restartPolicy: Always

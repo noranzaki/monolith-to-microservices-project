@@ -1,41 +1,40 @@
 language: node_js
 node_js:
-  - 12
+  - 16
+
+branches:
+  only:
+    - master
 
 services:
   - docker
 
 # Pre-testing installs
 install:
-  - echo "nothing needs to be installed "
+  - echo "nothing needs to be installed"
 
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
 
-
 script:
   - docker --version # print the version for logging
-
-  # # Build and tag feed-api
-  # - docker build -t udagram-api-feed ./udagram-api-feed
-  # - docker tag udagram-api-feed noranzaki/udagram-api-feed:v1
-
-  # # Build and tag user-api
-  # - docker build -t udagram-api-user ./udagram-api-user
-  # - docker tag udagram-api-user noranzaki/udagram-api-user:v1
-
+  # Build and tag feed-api
+  - docker build -t udagram-api-feed ./udagram-api-feed
+  - docker tag udagram-api-feed noranzaki/udagram-api-feed:v1
+  # Build and tag user-api
+  - docker build -t udagram-api-user ./udagram-api-user
+  - docker tag udagram-api-user noranzaki/udagram-api-user:v1
   # Build and tag frontend
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend noranzaki/udagram-frontend:v6
-
+  - docker tag udagram-frontend noranzaki/udagram-frontend:v1
   # Build and tag reverseproxy
-  # - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  # - docker tag udagram-reverseproxy noranzaki/udagram-reverseproxy:v1
+  - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+  - docker tag udagram-reverseproxy noranzaki/udagram-reverseproxy:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  # - docker push noranzaki/udagram-api-feed:v1
-  # - docker push noranzaki/udagram-api-user:v1
-  - docker push noranzaki/udagram-frontend:v6
-  # - docker push noranzaki/udagram-reverseproxy:v1
+  - docker push noranzaki/udagram-api-feed:v1
+  - docker push noranzaki/udagram-api-user:v1
+  - docker push noranzaki/udagram-frontend:v1
+  - docker push noranzaki/udagram-reverseproxy:v1

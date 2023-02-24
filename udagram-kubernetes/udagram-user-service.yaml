@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-user
   labels:
-    app: udagram-user
+      app: udagram-api-user
+  name: backend-user
+  namespace: udagram
 spec:
-  ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
   selector:
-    app: udagram-user
+    service: udagram-api-user
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080

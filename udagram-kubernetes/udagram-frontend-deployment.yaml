@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: udagram-frontend
+  namespace: udagram
   labels:
     app: udagram-frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: udagram-frontend
@@ -15,5 +16,7 @@ spec:
         app: udagram-frontend
     spec:
       containers:
-      - name: udagram-frontend
-        image: noranzaki/udagram-frontend:v6
+      - name:  udagram-frontend
+        image: noranzaki/udagram-frontend:v1
+        imagePullPolicy: Always  
+      restartPolicy: Always

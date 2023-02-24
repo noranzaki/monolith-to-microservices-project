@@ -18,6 +18,7 @@ kubectl describe services
 * To verify that you have horizontal scaling set against CPU usage
 ```bash
 kubectl describe hpa
+this is not possible as i cant access app throw browser either local cause it gives me 2 errors shown in screenshots so there is no load 
 ```
 * To verify that you have set up logging with a backend application
 ```bash

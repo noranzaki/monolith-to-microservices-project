@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: udagram-reverseproxy
+  name: reverseproxy-svc
+  namespace: udagram
   labels:
-    app: udagram-reverseproxy
+    app: reverseproxy
 spec:
   ports:
-  - port: 8080
-    protocol: TCP
+  - name: "8080"
+    port: 8080
     targetPort: 8080
   selector:
-    app: udagram-reverseproxy
+    app: reverseproxy

@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name:  udagram-frontend
-        image: noranzaki/udagram-frontend:v1
+        image: noranzaki/udagram-frontend:v2
         imagePullPolicy: Always  
       restartPolicy: Always

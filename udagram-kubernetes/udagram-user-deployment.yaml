@@ -16,7 +16,7 @@ spec:
         app: udagram-api-user
     spec:
       containers:
-      - image: noranzaki/udagram-api-user:v1
+      - image: noranzaki/udagram-api-user:v2
         name: udagram-api-user
         resources:
           requests:

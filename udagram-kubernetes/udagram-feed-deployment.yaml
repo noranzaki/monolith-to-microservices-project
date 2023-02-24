@@ -16,7 +16,7 @@ spec:
         app: udagram-api-feed
     spec:
       containers:
-      - image: noranzaki/udagram-api-feed:v1
+      - image: noranzaki/udagram-api-feed:v2
         name: udagram-api-feed
         resources:
           requests:

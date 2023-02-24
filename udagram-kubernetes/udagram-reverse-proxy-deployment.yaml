@@ -16,7 +16,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: noranzaki/reverseproxy:v1
+      - image: noranzaki/reverseproxy:v2
         name: reverseproxy
         imagePullPolicy: Always              
         ports:

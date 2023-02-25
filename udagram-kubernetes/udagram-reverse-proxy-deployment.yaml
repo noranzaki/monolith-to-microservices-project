@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: noranzaki/udagram-reverseproxy:v2
+      - image: noranzaki/udagram-reverseproxy:v4
         name: reverseproxy 
         imagePullPolicy: Always
         ports:

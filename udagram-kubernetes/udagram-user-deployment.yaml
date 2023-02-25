@@ -15,7 +15,7 @@ spec:
         app: backend-user
     spec:
       containers:
-      - image: noranzaki/udagram-api-user:v2
+      - image: noranzaki/udagram-api-user:v4
         name: backend-user
         resources:
           requests:

@@ -15,7 +15,7 @@ spec:
         app: backend-feed
     spec:
       containers:
-      - image: noranzaki/udagram-api-feed:v2
+      - image: noranzaki/udagram-api-feed:v4
         name: backend-feed
         resources:
           requests:

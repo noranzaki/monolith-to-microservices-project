@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
       - name:  frontend
-        image: noranzaki/udagram-frontend:v2 
+        image: noranzaki/udagram-frontend:v4
       restartPolicy: Always
